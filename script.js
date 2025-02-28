@@ -2,6 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
+import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAQMahWZQRBteiRXa_V-IrQYa76wGpEf5Y",
@@ -18,6 +19,10 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 let isRegistering = false;
+const appCheck = initializeAppCheck(app, {
+    provider: new ReCaptchaV3Provider('6Le9yuUqAAAAAP8vwv_-RJm3S45L_vNfNjAD4kga'), // Replace with your reCAPTCHA site key
+    isTokenAutoRefreshEnabled: true, // Enable token auto-refresh
+  });
 
 // DOM Elements
 const loginContainer = document.getElementById('login-container');
