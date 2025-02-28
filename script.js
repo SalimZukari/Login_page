@@ -3,7 +3,16 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebas
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
 
-const firebaseConfig = window.firebaseConfig;
+const firebaseConfig = {
+    apiKey: "AIzaSyAQMahWZQRBteiRXa_V-IrQYa76wGpEf5Y",
+    authDomain: "login-4b453.firebaseapp.com",
+    projectId: "login-4b453",
+    storageBucket: "login-4b453.firebasestorage.app",
+    messagingSenderId: "778554242149",
+    appId: "1:778554242149:web:dfa89db828c776577d028c",
+    measurementId: "G-WP4KPYT763"
+};
+
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
